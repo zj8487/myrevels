@@ -1,4 +1,4 @@
-# hocrawler
+# myrevels
 一个基于golang+revel小型博客
 
 
