@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{{.title}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/styles.css">
+    <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+    <script src="/public/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+    {{range .moreStyles}}
+      <link rel="stylesheet" type="text/css" href="/public/{{.}}">
+    {{end}}
+    {{range .moreScripts}}
+      <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
+    {{end}}
+  </head>
+  <body>
+<div class="container main-nav">
+  <div class="top">
+  <ul class="nav nav-pills">
+     <li role="presentation" class="{{.home}}"><a href="/">Home</a></li>
+     <li role="presentation" class="{{.write}}"><a href="/write">投稿</a></li>
+     <li role="presentation" class="{{.messagefun}}"><a href="/message">留言</a></li>
+     <li role="presentation" class="{{.historyfun}}"><a href="/history">归档</a></li>
+     <li role="presentation" class="{{.about}}"><a href="/about">About Me</a></li>
+     <li role="presentation" class="{{.email}}"><a href="/email">Email</a></li>
+     <li role="presentation" class="{{.rss}}"><a href="#">RSS</a></li>
+</ul>
+</div>
+</div>

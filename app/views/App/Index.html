@@ -1,0 +1,32 @@
+{{set . "title" "Home - MyRevels"}}
+{{set . "home" "active" }}
+{{template "header.html" .}}
+
+<div class="content" style="padding: 30px;">  
+  {{if .blogs}}  
+  {{range $blog := .blogs}}  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="cell-subject">  
+            <div>  
+              <a href="/bloginfor/{{$blog.Id.Hex}}/{{$blog.ReadCnt}}" class="cell-subject-title" ><strang>{{$blog.GetShortTitle }}</strang></a>  
+              <a href="#" class="comment-num" title="Comments">{{$blog.CommentCnt}}</a>  
+            </div>  
+            <div class="subject-infor">  
+              <span class="label label-success">Author</span>   <span>{{$blog.Email}} </span>    
+              <span class="label label-default">Date</span>  {{$blog.CDate.Format "2006-01-02 15:04" }}     
+              <span class="label label-info">Read</span>  {{$blog.ReadCnt}}  
+            </div>  
+        </div>  
+      </div>
+      <div class="panel-body">
+        <div class="cell-text">  
+          {{$blog.GetShortContent }} 
+      </div>
+      </div>
+    </div>
+     {{end}}  
+    {{end}}  
+</div>  
+
+{{template "footer.html" .}}
